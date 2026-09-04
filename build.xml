@@ -14,7 +14,7 @@
   	<!-- <antcall target="builddbs" /> -->
     <antcall target="compile" />
     <antcall target="unittest" />
-    <antcall target="package" />
+    <!-- <antcall target="package" /> -->
   </target>
 
   <!-- geen packaging en dergelijke voor de CI build -->

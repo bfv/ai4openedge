@@ -1,4 +1,5 @@
 # Project Guidelines
 
-See [rules/coding-standards.md](rules/coding-standards.md) for ABL coding standards.
-See [rules/testing.md](rules/testing.md) for (unit) test conventions.
+See [docs/coding-standards.md](docs/coding-standards.md) for ABL coding standards.
+See [docs/testing.md](docs/testing.md) for (unit) test conventions.
+See [docs/architecture.md](docs/architecture.md) for architecture
