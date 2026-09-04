@@ -33,8 +33,7 @@ using Progress.Reflect.Property.
 
 class fwebh.serialize.SimpleJsonDeserializer implements IDeserializable: 
   
-  define private variable serializeThese as character no-undo.
-  
+  var char serializeThese.
   
   constructor public SimpleJsonDeserializer():
     serializeThese = "character,date,datetime,datetimetz,decimal,integer,int64,logical,longchar,memptr".    

@@ -19,7 +19,7 @@ using test.core.Configurable.
 
 class fwebh.core.Factory_UT: 
   
-  define private variable factory as IFactory no-undo.
+  var IFactory factory.
   
   {fwebh/core/ttfactorydef.i}
   
