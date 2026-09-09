@@ -15,6 +15,7 @@ Apply these rules to all ABL changes.
 ## ABL code
 - Use symbolic comparisons: `=`, `<>`, `<`, `<=`, `>`, `>=`; parenthesize non-trivial expressions.
 - Use `var` for `no-undo` variables and compound assignments (`+=`, `-=`, `*=`, `/=`) when applicable.
+- use `var char` and `var int` instead of `var character` and `var integer` 
 - Keep `if ... then do:` and `else do:` on one line. Extract complex boolean expressions into a well-named logical variable.
 - Prefer pure functions. Pass required state as parameters instead of reading globals.
 - Prefer functions to internal procedures where they express the operation naturally. Name the result variable after the function.
