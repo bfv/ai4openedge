@@ -24,6 +24,10 @@
                 "riversidesoftware.openedge-abl-lsp@prerelease",
                 "progress-software.progress-openedge-mcp-connector-abl",
                 "wayfare.ablunitrunner",
+                "redhat.vscode-xml",
+                "redhat.vscode-yaml",
+                "ms-vscode.hexeditor",
+                "anweber.vscode-httpyac",
             ]
         }
     },
