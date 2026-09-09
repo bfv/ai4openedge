@@ -164,12 +164,17 @@ class fwebh.core.Factory implements IFactory:
         singleInstanceFound = true.
       end.    
     end. 
-    
-    if not valid-object(instanceRef) then do:
-      instanceRef = dynamic-new(ttdefintion.classname)() no-error.
-            
+
+    if not valid-object(instanceRef) then do on error undo, throw:
+      instanceRef = dynamic-new(ttdefintion.classname)().
+       
       if not error-status:error and instanceRef:GetClass():IsA("fwebh.core.IConfigurable") and valid-object(ttdefintion.config) then
         cast(instanceRef, IConfigurable):Configure(cast(ttdefintion.config, JsonObject)).
+      
+      catch err1 as Progress.Lang.Error:
+        undo, throw new AppError(substitute("error creating instance of '&1': &2", ttdefintion.classname, err1:GetMessage(1)), -1).
+      end catch.
+
     end.              
     
     if (not valid-object(instanceRef)) then      
