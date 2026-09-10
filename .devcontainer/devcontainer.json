@@ -43,6 +43,7 @@
         "PROPATH": "./src,./bin",
         "OE_MCP_API_KEY": "${localEnv:OE_MCP_API_KEY}"
     },
+    "postCreateCommand": "bash .devcontainer/post-create.sh",
     "forwardPorts": [],
     //"postStartCommand": "bash .devcontainer/post-start.sh",
     "shutdownAction": "none"
