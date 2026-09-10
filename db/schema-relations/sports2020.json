@@ -1,0 +1,152 @@
+{
+  "database": "sports2020",
+  "relationships": [
+    {
+      "from": { "table": "Order", "fields": ["CustNum"] },
+      "to": { "table": "Customer", "fields": ["CustNum"] },
+      "cardinality": "many-to-one",
+      "name": "OrderCustomer",
+      "description": "Each order belongs to one existing customer."
+    },
+    {
+      "from": { "table": "Benefits", "fields": ["EmpNum"] },
+      "to": { "table": "Employee", "fields": ["EmpNum"] },
+      "cardinality": "many-to-one",
+      "name": "BenefitsEmployee",
+      "description": "Each benefit record belongs to one employee through EmpNum."
+    },
+    {
+      "from": { "table": "BillTo", "fields": ["CustNum"] },
+      "to": { "table": "Customer", "fields": ["CustNum"] },
+      "cardinality": "many-to-one",
+      "name": "BillToCustomer",
+      "description": "Each bill-to address belongs to one customer through CustNum."
+    },
+    {
+      "from": { "table": "Bin", "fields": ["WarehouseNum"] },
+      "to": { "table": "Warehouse", "fields": ["WarehouseNum"] },
+      "cardinality": "many-to-one",
+      "name": "BinWarehouse",
+      "description": "Each bin belongs to one warehouse through WarehouseNum."
+    },
+    {
+      "from": { "table": "Bin", "fields": ["ItemNum"] },
+      "to": { "table": "Item", "fields": ["ItemNum"] },
+      "cardinality": "many-to-one",
+      "name": "BinItem",
+      "description": "Each bin inventory record belongs to one item through ItemNum."
+    },
+    {
+      "from": { "table": "Customer", "fields": ["SalesRep"] },
+      "to": { "table": "SalesRep", "fields": ["SalesRep"] },
+      "cardinality": "many-to-one",
+      "name": "CustomerSalesRep",
+      "description": "Each customer is assigned to one sales representative through SalesRep."
+    },
+    {
+      "from": { "table": "Employee", "fields": ["DeptCode"] },
+      "to": { "table": "Department", "fields": ["DeptCode"] },
+      "cardinality": "many-to-one",
+      "name": "EmployeeDepartment",
+      "description": "Each employee belongs to one department through DeptCode."
+    },
+    {
+      "from": { "table": "Family", "fields": ["EmpNum"] },
+      "to": { "table": "Employee", "fields": ["EmpNum"] },
+      "cardinality": "many-to-one",
+      "name": "FamilyEmployee",
+      "description": "Each family record belongs to one employee through EmpNum."
+    },
+    {
+      "from": { "table": "InventoryTrans", "fields": ["ItemNum"] },
+      "to": { "table": "Item", "fields": ["ItemNum"] },
+      "cardinality": "many-to-one",
+      "name": "InventoryTransItem",
+      "description": "Each inventory transaction belongs to one item through ItemNum."
+    },
+    {
+      "from": { "table": "Invoice", "fields": ["CustNum"] },
+      "to": { "table": "Customer", "fields": ["CustNum"] },
+      "cardinality": "many-to-one",
+      "name": "InvoiceCustomer",
+      "description": "Each invoice belongs to one customer through CustNum."
+    },
+    {
+      "from": { "table": "Order", "fields": ["WarehouseNum"] },
+      "to": { "table": "Warehouse", "fields": ["WarehouseNum"] },
+      "cardinality": "many-to-one",
+      "name": "OrderWarehouse",
+      "description": "Each order is assigned to one warehouse through WarehouseNum."
+    },
+    {
+      "from": { "table": "OrderLine", "fields": ["OrderNum"] },
+      "to": { "table": "Order", "fields": ["OrderNum"] },
+      "cardinality": "many-to-one",
+      "name": "OrderLineOrder",
+      "description": "Each order line belongs to one order through OrderNum."
+    },
+    {
+      "from": { "table": "OrderLine", "fields": ["ItemNum"] },
+      "to": { "table": "Item", "fields": ["ItemNum"] },
+      "cardinality": "many-to-one",
+      "name": "OrderLineItem",
+      "description": "Each order line belongs to one item through ItemNum."
+    },
+    {
+      "from": { "table": "POLine", "fields": ["ItemNum"] },
+      "to": { "table": "Item", "fields": ["ItemNum"] },
+      "cardinality": "many-to-one",
+      "name": "POLineItem",
+      "description": "Each purchase order line belongs to one item through ItemNum."
+    },
+    {
+      "from": { "table": "POLine", "fields": ["PONum"] },
+      "to": { "table": "PurchaseOrder", "fields": ["PONum"] },
+      "cardinality": "many-to-one",
+      "name": "POLinePurchaseOrder",
+      "description": "Each purchase order line belongs to one purchase order through PONum."
+    },
+    {
+      "from": { "table": "PurchaseOrder", "fields": ["SupplierIDNum"] },
+      "to": { "table": "Supplier", "fields": ["SupplierIDNum"] },
+      "cardinality": "many-to-one",
+      "name": "PurchaseOrderSupplier",
+      "description": "Each purchase order belongs to one supplier through SupplierIDNum."
+    },
+    {
+      "from": { "table": "ShipTo", "fields": ["CustNum"] },
+      "to": { "table": "Customer", "fields": ["CustNum"] },
+      "cardinality": "many-to-one",
+      "name": "ShipToCustomer",
+      "description": "Each ship-to address belongs to one customer through CustNum."
+    },
+    {
+      "from": { "table": "SupplierItemXref", "fields": ["SupplierIDNum"] },
+      "to": { "table": "Supplier", "fields": ["SupplierIDNum"] },
+      "cardinality": "many-to-one",
+      "name": "SupplierItemXrefSupplier",
+      "description": "Each supplier-item cross-reference belongs to one supplier through SupplierIDNum."
+    },
+    {
+      "from": { "table": "SupplierItemXref", "fields": ["ItemNum"] },
+      "to": { "table": "Item", "fields": ["ItemNum"] },
+      "cardinality": "many-to-one",
+      "name": "SupplierItemXrefItem",
+      "description": "Each supplier-item cross-reference belongs to one item through ItemNum."
+    },
+    {
+      "from": { "table": "TimeSheet", "fields": ["EmpNum"] },
+      "to": { "table": "Employee", "fields": ["EmpNum"] },
+      "cardinality": "many-to-one",
+      "name": "TimeSheetEmployee",
+      "description": "Each timesheet record belongs to one employee through EmpNum."
+    },
+    {
+      "from": { "table": "Vacation", "fields": ["EmpNum"] },
+      "to": { "table": "Employee", "fields": ["EmpNum"] },
+      "cardinality": "many-to-one",
+      "name": "VacationEmployee",
+      "description": "Each vacation record belongs to one employee through EmpNum."
+    }
+  ]
+}

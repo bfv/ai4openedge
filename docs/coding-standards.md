@@ -1,6 +1,10 @@
 # ABL Rules for Agents
-
 Apply these rules to all ABL changes.
+
+## MCP servers
+- Use `openedge-abl-mcp-server` for ABL syntax.
+- use `openedge-schema` for database schema related questions
+- use `openedge-xref` for cross reference (sources, table/field/index usage)
 
 ## Style and names
 - Write code and comments in American English; domain terms may remain local.
