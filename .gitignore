@@ -8,6 +8,9 @@ build/
 log/
 tmp/
 
+tools/openedge-schema-mcp/.venv/
+tools/openedge-schema-mcp/.pytest_cache/
+
 # file types
 *.dbi
 *.lbi
@@ -17,6 +20,6 @@ tmp/
 *.srt
 
 # files
-.vscode/mcp.json
+#.vscode/mcp.json
 .vscode/mcp.json.bak
 
