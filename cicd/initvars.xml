@@ -7,24 +7,24 @@
     <property name="builddir" location="${rootdir}/build" />
     <property name="tmpdir" location="${builddir}/tmp" />
     <property name="dbsdir" location="${builddir}/db" />
-    <property name="dfdir" location="./schema" />
+    <property name="dfdir" location="./db/schema" />
     <property name="artifactdir" location="${rootdir}/artifacts" />
     <property name="cicdfilesdir" location="${rootdir}/cicd" />
     <property name="DLC" value="${env.DLC}" />
 
     <ProgressVersion dlcHome="${DLC}" majorVersion="dlcMajor" minorVersion="dlcMinor" shortVersion="dlcVersion" />
 
-    <echo message="rootdir:          ${rootdir}" />
-    <echo message="srcdir:           ${srcdir}" />
-    <echo message="builddir:         ${builddir}" />
-    <echo message="tmpdir:           ${tmpdir}" />
-    <echo message="dbsdir:           ${dbsdir}" />
-    <echo message="dfdir:            ${dfdir}" />
-    <echo message="artifactdir:      ${artifactdir}" />
-    <echo message="cicdfilesdir:     ${cicdfilesdir}" />
-    <echo message="executeUnittests: ${executeUnittests}" />
-    <echo message="DLC:              ${DLC}" />
-    <echo message="dlcVersion:       ${dlcVersion}" />
+    <echo level="info" message="rootdir:          ${rootdir}" />
+    <echo level="info" message="srcdir:           ${srcdir}" />
+    <echo level="info" message="builddir:         ${builddir}" />
+    <echo level="info" message="tmpdir:           ${tmpdir}" />
+    <echo level="info" message="dbsdir:           ${dbsdir}" />
+    <echo level="info" message="dfdir:            ${dfdir}" />
+    <echo level="info" message="artifactdir:      ${artifactdir}" />
+    <echo level="info" message="cicdfilesdir:     ${cicdfilesdir}" />
+    <echo level="info" message="executeUnittests: ${executeUnittests}" />
+    <echo level="info" message="DLC:              ${DLC}" />
+    <echo level="info" message="dlcVersion:       ${dlcVersion}" />
 
     <ProgressVersion dlcHome="${env.DLC}" shortVersion="openedgeVersion"/>
 

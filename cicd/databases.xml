@@ -13,11 +13,15 @@
   </macrodef> 
 
   <DBConnectionSet id="compiledbs">
-    <!--
     <DBConnection dbName="sports2020" dbDir="${dbsdir}" singleUser="true" readOnly="true">
       <Alias name="sports2020" />
     </DBConnection>
-    -->
+  </DBConnectionSet>   
+
+  <DBConnectionSet id="localdbs">
+    <DBConnection dbName="sports2020" dbPort="10000" hostname="db">
+      <Alias name="sports2020" />
+    </DBConnection>
   </DBConnectionSet>   
 
 </project>

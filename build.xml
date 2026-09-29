@@ -8,10 +8,11 @@
 
   <import file="cicd/initvars.xml" />   <!-- initvars -->
   <import file="cicd/databases.xml" />  <!-- builddb macro -->
+  <import file="cicd/testing.xml" />    <!-- unit test selection -->
   <import file="cicd/package.xml" />    <!-- package target -->
   
   <target name="build" depends="initvars,init">
-  	<!-- <antcall target="builddbs" /> -->
+  	<antcall target="builddbs" />
     <antcall target="compile" />
     <antcall target="unittest" />
     <!-- <antcall target="package" /> -->
@@ -19,7 +20,7 @@
 
   <!-- geen packaging en dergelijke voor de CI build -->
   <target name="ci" depends="initvars,init">
-  	<!-- <antcall target="builddbs" />  -->
+  	<antcall target="builddbs" /> 
     <antcall target="compile" />
     <antcall target="unittest" />
   </target>
@@ -31,7 +32,7 @@
     <delete dir="${artifactdir}" failonerror="false" />
     <mkdir dir="${artifactdir}" />
     <property name="initialized" value="true" />    
-    <echo message="test of tmpdir ${tmpdir} writable is" />
+    <echo level="info" message="test if tmpdir ${tmpdir} is writable" />
   </target>
   
   <target name="builddbs">
@@ -60,7 +61,7 @@
         requireFullKeywords="true" requireFullNames="true" requireFieldQualifiers="true" requireReturnValues="true"
         >
       
-      <!-- <DBConnectionSet refid="compiledbs" /> -->
+      <DBConnectionSet refid="compiledbs" />
 			
       <propath>
         <pathelement path="${srcdir}/src" />
@@ -80,12 +81,57 @@
     </PCTCompile>
   </target>
 
+  <target name="compileSources" depends="initvars">
+
+    <PCTCompile destdir="${builddir}/rcode" dlchome="${DLC}" stopOnError="false" 
+        graphicalMode="false" forceCompile="true" MD5="true" 
+        noParse="true"
+        paramfile="${rootdir}/cicd/build-dev.compile.pf"
+        numThreads="8"
+        progPerc="10"
+        tempDir="${tmpdir}"
+        keepXref="false"
+        requireFullKeywords="true" requireFullNames="true" requireFieldQualifiers="true" requireReturnValues="true"
+        >
+      
+      <DBConnectionSet refid="localdbs" />
+			
+      <propath>
+        <pathelement path="${srcdir}/src" />
+        <pathelement path="${srcdir}/tools" />
+        <pathelement path="${DLC}/tty/OpenEdge.Core.pl" />
+        <pathelement path="${DLC}/tty/netlib/OpenEdge.Net.pl" />
+        <pathelement path="${DLC}/tty/ablunit.pl" />
+      </propath>
+      
+      <fileset dir="${srcdir}" includes="${sources}" />
+      
+    </PCTCompile>
+
+  </target>
+
   <target name="unittest" if="executeUnittests">
 
     <ABLUnit haltOnFailure="false" writeLog="true" dlchome="${DLC}">
       <fileset dir="${srcdir}">
         <include name="**/*_UT.cls" />
       </fileset> 
+      <propath>
+        <pathelement path="${srcdir}" />
+        <pathelement path="${DLC}/tty/OpenEdge.Core.pl" />
+        <pathelement path="${DLC}/tty/netlib/OpenEdge.Net.pl" />
+        <pathelement path="${DLC}/tty/ablunit.pl" />
+      </propath>
+    </ABLUnit>
+    
+  </target>
+
+  <target name="unittestSources" depends="resolveUnitTestSources,executeUnitTestSources" />
+
+  <target name="executeUnitTestSources" if="hasUnitTestSources">
+    <ABLUnit haltOnFailure="false" writeLog="true" dlchome="${DLC}">
+      <DBConnectionSet refid="localdbs" />
+      <fileset dir="${srcdir}" includes="${unittestSources}" />
       <propath>
         <pathelement path="${srcdir}" />
         <pathelement path="${DLC}/tty/OpenEdge.Core.pl" />

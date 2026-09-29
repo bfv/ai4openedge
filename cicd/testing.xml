@@ -1,0 +1,62 @@
+<project name="testing">
+
+	<target name="resolveUnitTestSources" depends="initvars">
+
+		<fileset id="selectedSources" dir="${srcdir}" includes="${sources}" />
+
+		<fileset id="annotatedSources" dir="${srcdir}" includes="${sources}">
+			<contains text="@unittest" casesensitive="false" />
+		</fileset>
+
+		<difference id="sourcesWithoutUnitTestAnnotation">
+			<resources refid="selectedSources" />
+			<resources refid="annotatedSources" />
+		</difference>
+
+		<pathconvert property="sourcesWithoutUnitTestAnnotation" pathsep=",">
+			<path>
+				<resources refid="sourcesWithoutUnitTestAnnotation" />
+			</path>
+			<mapper type="glob" from="${srcdir}/*" to="*" />
+		</pathconvert>
+
+		<for list="${sourcesWithoutUnitTestAnnotation}" param="source" delimiter=",">
+			<sequential>
+				<echo level="warning" message="@{source} has no valid @unittest annotation." />
+			</sequential>
+		</for>
+
+		<resourcecount property="annotatedSourceCount">
+			<resources refid="annotatedSources" />
+		</resourcecount>
+
+		<if>
+			<equals arg1="${annotatedSourceCount}" arg2="0" />
+			<then>
+				<echo level="warning" message="No unit tests for sources: ${sources}." />
+			</then>
+			<else>
+				<pathconvert property="unittestSources" pathsep=",">
+					<path>
+						<fileset refid="annotatedSources" />
+					</path>
+					<mapper type="glob" from="${srcdir}/*.cls" to="*_UT.cls" />
+				</pathconvert>
+
+				<for list="${unittestSources}" param="unitTestSource" delimiter=",">
+					<sequential>
+						<if>
+							<not>
+								<available file="${srcdir}/@{unitTestSource}" />
+							</not>
+							<then>
+								<echo level="warning" message="Unit test @{unitTestSource} is missing for a source with @unittest." />
+							</then>
+						</if>
+					</sequential>
+				</for>
+			</else>
+		</if>
+	</target>
+
+</project>
