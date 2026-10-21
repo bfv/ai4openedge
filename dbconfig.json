@@ -1,0 +1,15 @@
+{
+  "schemaLocation": "nondeploy/schema",
+  "dbfileLocation": "c:/tmp/dbs",
+  "databases": {
+    "ibis": {
+      "tables": [""]
+    },
+    "local": {
+
+    },
+    "ibisdtp": {
+
+    }
+  }
+}

@@ -2,5 +2,7 @@
   "echo": {"classname": "fwebh.pas.service.system.EchoService"},
   "orders": {"classname": "sports2020.service.OrderService", "singleton": true},
   "customers": { "classname": "sports2020.service.CustomerService"},
+  "salesrep": { "classname": "sports2020.service.SalesRepService"},
+  "orderline": {"classname": "sports2020.service.OrderLineService"},
   "sysinfo": {"classname": "fwebh.pas.service.system.SystemInfoService"}
 }

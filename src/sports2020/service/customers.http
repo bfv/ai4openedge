@@ -1,0 +1,10 @@
+@host = http://pas:8810
+@apiVersion = v1
+
+### GET /customers
+GET {{host}}/web/{{apiVersion}}/customers
+Accept: application/json
+
+
+GET {{host}}/web/{{apiVersion}}/customers/6855
+Accept: application/json

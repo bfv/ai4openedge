@@ -1,3 +1,4 @@
 {
-    "abl.buildMode": 1
+    "abl.buildMode": 1,
+    "makefile.configureOnOpen": false
 }

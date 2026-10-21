@@ -3,19 +3,19 @@
 		"openedge-abl-mcp-server": {
 			"command": "python3",
 			"args": [
-				"/home/openedge/.vscode-server/extensions/progress-software.progress-openedge-mcp-connector-abl-1.9.5/resources/mcp-proxy.py",
+				"/home/openedge/.vscode-server/extensions/progress-software.progress-openedge-mcp-connector-abl-1.9.7/resources/mcp-proxy.py",
 				"https://openedge.data.progress.cloud/openedgemcp/connector4abl/mcp",
-				"GhokxsgbbrXRxwpqvOhu5w=="
+				"92uY0FhSyYM2bWUdiMe68A=="
 			],
 			"env": {
-				"PDC_ACCESS_TOKEN": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYi5vb3N0ZXJtZXllckBmbHVzc28ubmwiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImZiNjc0NTMxLTFkNjQtNDczZi05MTgwLWRkYzk2MmZhZTllMyIsIkFzcE5ldC5JZGVudGl0eS5TZWN1cml0eVN0YW1wIjoiQ1JDQktFTjJXV1EzRlRBUldZUkFQRDRLU0xZNDYyN1QiLCJuYmYiOiIxNzg5MDI5NTgwIiwiZXhwIjoiMTc4OTAzMzE4MCIsImp0aSI6IjI4YzQzYTFkLWQyMjctNDdiNi04OWM0LTdjMDEwNTQxM2VhOSJ9.4eKYQU5YH-ds-Et5VTRGqPslf6Q47Mz8Wsh2JD5AIsM"
+				"PDC_ACCESS_TOKEN": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYi5vb3N0ZXJtZXllckBmbHVzc28ubmwiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImZiNjc0NTMxLTFkNjQtNDczZi05MTgwLWRkYzk2MmZhZTllMyIsIkFzcE5ldC5JZGVudGl0eS5TZWN1cml0eVN0YW1wIjoiQ1JDQktFTjJXV1EzRlRBUldZUkFQRDRLU0xZNDYyN1QiLCJuYmYiOiIxNzkyMTU0NjI2IiwiZXhwIjoiMTc5MjE1ODIyNiIsImp0aSI6IjNmMGMyYTgyLTlhZGUtNGViMC1hODRjLWZhYTBjNDQyZGQ0ZCJ9.WTUY3mfNxZ7V4ftko_Hi2DGJoxoYznitH0cs5afTws4"
 			}
 		},
 		"openedge-schema": {
 			"command": "/home/openedge/.local/bin/uvx",
 			"args": [
 				"--from",
-				"git+https://github.com/bfv/openedge-schema-mcp.git@v0.2.0#subdirectory=openedge-schema-mcp",
+				"git+https://github.com/bfv/openedge-schema-mcp.git@v0.5.1#subdirectory=openedge-schema-mcp",
 				"openedge-schema-mcp"
 			],
 			"env": {

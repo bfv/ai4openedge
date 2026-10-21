@@ -10,9 +10,7 @@ build:
 	$(ANTEXE) -buildfile build.xml
 
 ci:
-	$(ANTEXE) ci
+	$(ANTEXE) ci -DexecuteUnittests=true
 
 compile:
 	$(ANTEXE) -Dsources=$(sources) compileSources
-	$(ANTEXE) -Dsources=$(sources) unittestSources
-

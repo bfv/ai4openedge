@@ -2,9 +2,9 @@
 
 ## Sources of truth
 
-- Follow [coding-standards.md](../docs/coding-standards.md) for every ABL change.
-- Follow [architecture.md](../docs/architecture.md). Reuse the established layer, component type and reference implementation before introducing a new pattern.
-- Follow [testing.md](../docs/testing.md) to design, implement and validate tests.
+- Follow [coding-standards.md](../.ai/rules/coding-standards.md) for every ABL change.
+- Follow [architecture.md](../.ai/rules/architecture.md). Reuse the established layer, component type and reference implementation before introducing a new pattern.
+- Follow [testing.md](../.ai/rules/testing.md) to design, implement and validate tests.
 - Treat existing code and project documentation as the source of truth for business rules, database schema and naming. State missing context or assumptions explicitly.
 
 ## OpenEdge knowledge

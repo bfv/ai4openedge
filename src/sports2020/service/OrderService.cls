@@ -11,6 +11,7 @@ using fwebh.pas.service.IPostDataService.
 using Progress.Json.ObjectModel.JsonArray.
 using Progress.Json.ObjectModel.JsonObject.
 
+@unittest.
 class sports2020.service.OrderService implements IGetDataService, IPostDataService:
 
   define private buffer b-order for Order.

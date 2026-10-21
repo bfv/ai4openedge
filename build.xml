@@ -113,8 +113,12 @@
   <target name="unittest" if="executeUnittests">
 
     <ABLUnit haltOnFailure="false" writeLog="true" dlchome="${DLC}">
+
+      <DBConnectionSet refid="localdbs" />
+
       <fileset dir="${srcdir}">
         <include name="**/*_UT.cls" />
+        <exclude name="fwebh/**/*_UT.cls" />
       </fileset> 
       <propath>
         <pathelement path="${srcdir}" />
@@ -138,8 +142,7 @@
         <pathelement path="${DLC}/tty/netlib/OpenEdge.Net.pl" />
         <pathelement path="${DLC}/tty/ablunit.pl" />
       </propath>
-    </ABLUnit>
-    
+    </ABLUnit>   
   </target>
   
 </project>
