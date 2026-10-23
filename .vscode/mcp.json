@@ -15,7 +15,7 @@
 			"command": "/home/openedge/.local/bin/uvx",
 			"args": [
 				"--from",
-				"git+https://github.com/bfv/openedge-schema-mcp.git@v0.5.2#subdirectory=openedge-schema-mcp",
+				"git+https://github.com/bfv/openedge-schema-mcp.git@v0.5.3#subdirectory=openedge-schema-mcp",
 				"openedge-schema-mcp"
 			],
 			"env": {
